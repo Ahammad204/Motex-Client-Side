@@ -30,7 +30,7 @@ const Banner = () => {
                                 <p className="text-2xl md:text-5xl text-center text-white">
                                     Winter Offer Remaining
                                 </p>
-                               <div className="pl-10 mt-4">  <Time ></Time></div>
+                               <div className="lg:pl-10 mt-4">  <Time ></Time></div>
 
                                 <Link
                                     to="/about"
