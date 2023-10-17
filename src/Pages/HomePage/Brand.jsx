@@ -9,7 +9,7 @@ const Brand = () => {
                 {/* Brands-1 */}
                 <div className="card bg-base-100 shadow-xl">
                     <figure className="px-10 pt-10">
-                        <img src={"https://i.ibb.co/qr7QGtQ/Toyota-Logo.jpg"} alt="Toyota" className="rounded-xl" />
+                        <img src={"https://i.ibb.co/dPfg2SV/Toyota-Logo.png"} alt="Toyota" className="rounded-xl" />
                     </figure>
                     <div className="card-body items-center text-center ">
                         <h2 className="card-title font-extrabold text-3xl">TOYOTA</h2>
