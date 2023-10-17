@@ -1,3 +1,4 @@
+import AboutUs from "./AboutUs";
 import Banner from "./Banner";
 import Brand from "./Brand";
 import Navbar from "./Navbar";
@@ -14,6 +15,9 @@ const HomePage = () => {
             </div>
             <div className="mt-6">
                 <Brand></Brand>
+            </div>
+            <div className="mt-6">
+                <AboutUs></AboutUs>
             </div>
         </div>
         
