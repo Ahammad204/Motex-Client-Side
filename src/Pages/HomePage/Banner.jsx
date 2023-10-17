@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Time from './Time';
 
 
 const Banner = () => {
@@ -15,19 +16,21 @@ const Banner = () => {
                     <div className="hero-overlay bg-opacity-70"></div>
                     <div className="hero-content text-center text-neutral-content">
                         <div className="">
-                            <p className="mb-5 text-4xl md:text-9xl font-extrabold font-teko text-white">
+                            <p className="mb-5 text-4xl md:text-9xl font-extrabold  text-white">
                                 PH Mot<span className="text-[#ED1D26]">e</span>x
                             </p>
                             <div className="">
-                                <p className="text-3xl md:text-6xl font-teko font-semibold text-white">
+                                <p className="text-3xl md:text-6xl  font-semibold text-white">
                                     Best way to find your <span className="text-[#ED1D26]">Dream</span> car
                                 </p>
 
                                 <p className="mt-6 mb-3 font-bold text-lg text-center">
                                     Discover the Road to Your Dream Car at Motex: Where Driving Excellence Begins!
-
-                           
                                 </p>
+                                <p className="text-2xl md:text-5xl text-center text-white">
+                                    Winter Offer Remaining
+                                </p>
+                               <div className="pl-10 mt-4">  <Time ></Time></div>
 
                                 <Link
                                     to="/about"
