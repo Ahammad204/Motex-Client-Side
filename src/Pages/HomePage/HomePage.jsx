@@ -2,6 +2,7 @@ import AboutUs from "./AboutUs";
 import Banner from "./Banner";
 import Brand from "./Brand";
 import Navbar from "./Navbar";
+import Client from "./client";
 
 
 const HomePage = () => {
@@ -18,6 +19,9 @@ const HomePage = () => {
             </div>
             <div className="mt-6">
                 <AboutUs></AboutUs>
+            </div>
+            <div className="mt-10">
+                <Client></Client>
             </div>
         </div>
         

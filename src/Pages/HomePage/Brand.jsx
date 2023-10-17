@@ -3,7 +3,7 @@
 const Brand = () => {
     return (
         <div>
-            <h1 className="text-center font-extrabold text-7xl mb-3"> <span className="text-[#ED1D26]">B</span>rands </h1>
+            <h1 className="text-center font-bold text-6xl mb-5"> Our Top Quality <span className="text-[#ED1D26]">Brands</span></h1>
             <hr  />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
                 {/* Brands-1 */}
