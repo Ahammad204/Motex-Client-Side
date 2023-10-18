@@ -1,5 +1,4 @@
 import { Link, useNavigate } from "react-router-dom";
-
 import { useContext } from "react";
 import SocialLogin from "./SocialLogin/SocialLogin";
 import { AuthContext } from "../../Provider/AuthProvider";
@@ -29,6 +28,7 @@ const Register = () => {
 
         if (password.length < 6) {
             toast.error('Password must be at least 6 characters long');
+            
             return
           } else if (!/[A-Z]/.test(password)) {
             toast.error('Password must contain at least one capital letter');
@@ -100,12 +100,12 @@ const Register = () => {
                         </label>
                     </div>
                     <div className="form-control mt-6">
-                        <button className="btn btn-primary text-white border-none bg-gradient-to-r from-[#1C1F38] to-[#42D0D9]">Register</button>
+                        <button className="btn btn-primary text-white border-none bg-[#ED1D26] hover:bg-[#ED1D26]">Register</button>
                     </div>
                     <SocialLogin></SocialLogin>
                    
                 </form>
-                <p className="text-center mt-4">Already have an account? <Link className="text-[#42D0D9] font-bold" to="/login">Login</Link></p>
+                <p className="text-center mt-4">Already have an account? <Link className="text-[#ED1D26] font-bold" to="/login">Login</Link></p>
             </div>
         </div>
     );

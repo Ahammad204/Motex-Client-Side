@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Footer from "../Pages/Footer/Footer";
 import Navbar from './../Pages/HomePage/Navbar';
+import { Toaster } from "react-hot-toast";
 
 
 const MainLayouts = () => {
@@ -14,7 +15,7 @@ const MainLayouts = () => {
                 <div className="mt-9">
                     <Footer></Footer>
                 </div>
-
+            <Toaster></Toaster>
             </div>
         </div>
     );
