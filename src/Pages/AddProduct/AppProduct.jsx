@@ -19,7 +19,7 @@ const AppProduct = () => {
         console.log(newCar);
 
         //send data to the server
-        fetch('https://coffee-store-server-m5ktpjh01-kazi-ahammad-ullahs-projects.vercel.app/car', {
+        fetch('http://localhost:5000/car', {
 
             method: 'POST',
             headers: {
