@@ -6,6 +6,7 @@ import AppProduct from "../Pages/AddProduct/AppProduct";
 import Mycart from "../Pages/Mycart/Mycart";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import PrivateRoute from "./MotexPrivate";
 
   
   const router = createBrowserRouter([
@@ -24,12 +25,12 @@ import Register from "../Pages/Register/Register";
         },{
 
           path:"/addProduct",
-          element:<AppProduct></AppProduct>
+          element:<PrivateRoute><AppProduct></AppProduct></PrivateRoute>
 
         },{
 
           path:"/cart",
-          element:<Mycart></Mycart>
+          element:<PrivateRoute><Mycart></Mycart></PrivateRoute>
 
         },{
 
