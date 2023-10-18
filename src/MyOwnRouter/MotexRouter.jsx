@@ -4,6 +4,8 @@ import Error from './../Error/Error';
 import HomePage from "../Pages/HomePage/HomePage";
 import AppProduct from "../Pages/AddProduct/AppProduct";
 import Mycart from "../Pages/Mycart/Mycart";
+import Login from "../Pages/Login/Login";
+import Register from "../Pages/Register/Register";
 
   
   const router = createBrowserRouter([
@@ -28,6 +30,16 @@ import Mycart from "../Pages/Mycart/Mycart";
 
           path:"/cart",
           element:<Mycart></Mycart>
+
+        },{
+
+          path:"/login",
+          element:<Login></Login>
+
+        },{
+
+          path:"/register",
+          element:<Register></Register>
 
         }
 
