@@ -1,10 +1,14 @@
+import { useLoaderData } from "react-router-dom";
+import Brands from "../../Components/Brands/Brands";
 import AboutUs from "./AboutUs";
 import Banner from "./Banner";
-import Brand from "./Brand";
 import Client from "./client";
 
 
 const HomePage = () => {
+
+    const brands = useLoaderData()
+
     return (
         <div>
            
@@ -12,7 +16,7 @@ const HomePage = () => {
                 <Banner></Banner>
             </div>
             <div className="mt-6">
-                <Brand></Brand>
+                <Brands brands={brands}></Brands>
             </div>
             <div className="mt-6">
                 <AboutUs></AboutUs>

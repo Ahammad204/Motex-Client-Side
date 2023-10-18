@@ -7,6 +7,7 @@ import Mycart from "../Pages/Mycart/Mycart";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import PrivateRoute from "./MotexPrivate";
+import AddBrands from "../Pages/AddBrands/AddBrands";
 
   
   const router = createBrowserRouter([
@@ -19,7 +20,8 @@ import PrivateRoute from "./MotexPrivate";
         {
 
           path:"/",
-          element:<HomePage></HomePage>
+          element:<HomePage></HomePage>,
+          loader: ()=> fetch('http://localhost:5000/brand')
 
 
         },{
@@ -41,6 +43,12 @@ import PrivateRoute from "./MotexPrivate";
 
           path:"/register",
           element:<Register></Register>
+
+        },{
+
+          path:"/brand",
+          element:<PrivateRoute><AddBrands></AddBrands></PrivateRoute>,
+        
 
         }
 
