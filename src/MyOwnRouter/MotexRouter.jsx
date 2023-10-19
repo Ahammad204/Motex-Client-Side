@@ -9,6 +9,7 @@ import Register from "../Pages/Register/Register";
 import PrivateRoute from "./MotexPrivate";
 import AddBrands from "../Pages/AddBrands/AddBrands";
 import Products from "../Pages/Products/Products";
+import Slider from "../Components/BrandsSlide/Slider";
 
   
   const router = createBrowserRouter([
@@ -55,6 +56,11 @@ import Products from "../Pages/Products/Products";
 
           path:'/products/:name',
           element:<PrivateRoute><Products></Products></PrivateRoute>
+
+        },{
+
+          path:"/slide",
+          element:<PrivateRoute><Slider></Slider></PrivateRoute>
 
         }
 
