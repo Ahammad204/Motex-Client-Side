@@ -6,18 +6,19 @@ import { Link, useParams } from "react-router-dom";
 const Products = () => {
     const [products, setProducts] = useState([]);
     const [slider, setSlider] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
     const { name } = useParams();
 
 
     //Fetch car data by brand
     useEffect(() => {
         const fetchData = async () => {
+            setIsLoading(true);
             const response = await fetch(`http://localhost:5000/car`);
             const data = await response.json();
             const filteredProducts = data.filter((item) => item.brand === name);
             setProducts(filteredProducts);
-
-
+            setIsLoading(false);
 
         };
 
@@ -28,12 +29,14 @@ const Products = () => {
     //Fetch slider data by brand
     useEffect(() => {
         const fetchData = async () => {
+            setIsLoading(true);
             const response = await fetch(`http://localhost:5000/slide`);
             const data = await response.json();
             const filteredProducts = data.filter((item) => item.name === name);
             setSlider(filteredProducts);
             console.log(filteredProducts)
             console.log(data)
+            setIsLoading(false);
         };
 
         fetchData();
@@ -104,7 +107,21 @@ const Products = () => {
 
             ) : (
 
-                <div className="flex justify-center items-center mt-20">
+                <div>
+                {isLoading ? (
+                    <div className="flex justify-center items-center mt-20">
+                        <div className="hero w-2/3 h-2/3">
+                            <div className=""></div>
+                            <div className="hero-content text-center">
+                                <div className="max-w-md">
+                                <span className="loading loading-bars loading-lg"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ) : (
+              
+                    <div className="flex justify-center items-center mt-20">
                     <div className="hero w-2/3 h-2/3" >
                         <div className=""></div>
                         <div className="hero-content text-center ">
@@ -116,6 +133,8 @@ const Products = () => {
                         </div>
                     </div>
                 </div>
+                )}
+            </div>
 
             )
 
