@@ -7,7 +7,7 @@ const AppProduct = () => {
         const form = event.target;
 
         const name = form.name.value;
-        const brand = form.brand.value;
+        const brand = form.brand.value.toUpperCase();
         const type = form.type.value;
         const price = form.price.value;
         const short = form.short.value;
