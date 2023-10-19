@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 const UpdateCar = () => {
     const [Updated,setUpdated] = useState([])
     const [isLoading, setIsLoading] = useState(true);
-    const { name } = useParams();
+    const { id } = useParams();
         
     //Fetch car data by name
     useEffect(() => {
@@ -16,14 +16,14 @@ const UpdateCar = () => {
             setIsLoading(true);
             const response = await fetch(`http://localhost:5000/car`);
             const data = await response.json();
-            const filteredProducts = data.filter((item) => item.name === name);
+            const filteredProducts = data.filter((item) => item._id === id);
             setUpdated(filteredProducts[0]);
             setIsLoading(false);
 
         };
 
         fetchData();
-    }, [name]);
+    }, [id]);
 
     console.log(Updated)
 
@@ -33,7 +33,6 @@ const UpdateCar = () => {
 
         event.preventDefault();
         const form = event.target;
-
         const name = form.name.value;
         const brand = form.brand.value;
         const type = form.type.value;
@@ -47,9 +46,9 @@ const UpdateCar = () => {
         console.log(newCar);
 
         //send data to the server
-       fetch('http://localhost:5000/car', {
+       fetch(`http://localhost:5000/car/${id}`, {
 
-            method: 'POST',
+            method: 'PUT',
             headers: {
 
                 'content-type': 'application/json'
@@ -62,11 +61,11 @@ const UpdateCar = () => {
             .then(data => {
 
                 console.log(data);
-                if (data.insertedId) {
+                if (data.modifiedCount > 0) {
 
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Car Added Successfully',
+                        text: 'Car Updated Successfully',
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })
@@ -93,7 +92,7 @@ const UpdateCar = () => {
                         </label>
                         <label className="input-group">
 
-                            <input type="text" name="name" defaultValue={name} placeholder="Car name" className="input input-bordered w-full" />
+                            <input type="text" name="name" defaultValue={Updated.name} placeholder="Car name" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 ml-4">
@@ -143,11 +142,11 @@ const UpdateCar = () => {
                 <div className="md:flex mb-8">
                     <div className="form-control md:w-1/2">
                         <label className="label">
-                            <span className="label-text">Short Description</span>
+                            <span className="label-text" >Short Description</span>
                         </label>
                         <label className="input-group">
 
-                            <input type="text" name="short" placeholder="Short Description" className="input input-bordered w-full" />
+                            <input type="text" name="short" defaultValue={Updated.short} placeholder="Short Description" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 ml-4">
@@ -172,7 +171,7 @@ const UpdateCar = () => {
                         </label>
                         <label className="input-group">
 
-                            <input type="text" name="photo" placeholder="Photo Url" className="input input-bordered w-full" />
+                            <input type="text" defaultValue={Updated.photo} name="photo" placeholder="Photo Url" className="input input-bordered w-full" />
                         </label>
                     </div>
 

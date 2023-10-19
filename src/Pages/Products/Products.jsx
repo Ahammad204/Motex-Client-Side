@@ -136,7 +136,7 @@ const Products = () => {
 
                                     <div className="card-actions justify-end">
                                         <button className="btn bg-[#ED1D26] hover:bg-[#ED1D26] text-white">Details</button>
-                                      <Link to={`/update/${prod.name}`}>  <button className="btn bg-[#ED1D26] hover:bg-[#ED1D26] text-white">Update</button></Link>
+                                      <Link to={`/update/${prod._id}`}>  <button className="btn bg-[#ED1D26] hover:bg-[#ED1D26] text-white">Update</button></Link>
                                     </div>
                                 </div>
                             </div>

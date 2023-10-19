@@ -65,7 +65,7 @@ import UpdateCar from "../Pages/UpdateCar/UpdateCar";
 
         },{
 
-          path:'/update/:name',
+          path:'/update/:id',
           element:<PrivateRoute><UpdateCar></UpdateCar></PrivateRoute>,
 
         }
