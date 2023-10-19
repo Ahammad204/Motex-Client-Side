@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 const Brand = ({brand}) => {
 
     const {_id,name,photo} = brand || {}
+    console.log(name)
 
     return (
         <div>
