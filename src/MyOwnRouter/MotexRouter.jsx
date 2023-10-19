@@ -8,6 +8,7 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import PrivateRoute from "./MotexPrivate";
 import AddBrands from "../Pages/AddBrands/AddBrands";
+import Products from "../Pages/Products/Products";
 
   
   const router = createBrowserRouter([
@@ -49,6 +50,11 @@ import AddBrands from "../Pages/AddBrands/AddBrands";
           path:"/brand",
           element:<PrivateRoute><AddBrands></AddBrands></PrivateRoute>,
         
+
+        },{
+
+          path:'/products/:name',
+          element:<PrivateRoute><Products></Products></PrivateRoute>
 
         }
 
