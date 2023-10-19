@@ -82,10 +82,11 @@ const Products = () => {
             </div>
             <h1 className="text-center font-bold text-6xl mb-5 mt-5"> Our Top Quality <span className="text-[#ED1D26]">  Cars</span></h1>
             <hr />
+            
             {products.length > 0 ? (
-
+                
                 <div>
-
+                    
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
                         {products?.map(prod => (
                             <div className="card bg-base-100 shadow-xl" key={prod._id}>
@@ -136,7 +137,7 @@ const Products = () => {
 
                                     <div className="card-actions justify-end">
                                         <button className="btn bg-[#ED1D26] hover:bg-[#ED1D26] text-white">Details</button>
-                                        <button className="btn bg-[#ED1D26] hover:bg-[#ED1D26] text-white">Update</button>
+                                      <Link to={`/update/${prod._id}`}>  <button className="btn bg-[#ED1D26] hover:bg-[#ED1D26] text-white">Update</button></Link>
                                     </div>
                                 </div>
                             </div>
@@ -160,7 +161,7 @@ const Products = () => {
                             </div>
                         </div>
                     ) : (
-
+                        
                         <div className="flex justify-center items-center mt-20">
                             <div className="hero w-2/3 h-2/3" >
                                 <div className=""></div>

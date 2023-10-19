@@ -10,6 +10,7 @@ import PrivateRoute from "./MotexPrivate";
 import AddBrands from "../Pages/AddBrands/AddBrands";
 import Products from "../Pages/Products/Products";
 import Slider from "../Components/BrandsSlide/Slider";
+import UpdateCar from "../Pages/UpdateCar/UpdateCar";
 
   
   const router = createBrowserRouter([
@@ -61,6 +62,12 @@ import Slider from "../Components/BrandsSlide/Slider";
 
           path:"/slide",
           element:<PrivateRoute><Slider></Slider></PrivateRoute>
+
+        },{
+
+          path:'/update/:id',
+          element:<PrivateRoute><UpdateCar></UpdateCar></PrivateRoute>,
+          loader:({params})=> fetch(`http://localhost:5000/car/${params.id}`)
 
         }
 
