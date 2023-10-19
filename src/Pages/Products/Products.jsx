@@ -27,6 +27,7 @@ const Products = () => {
     }, [name]);
 
 
+
     //Fetch slider data by brand
     useEffect(() => {
         const fetchData = async () => {
@@ -35,15 +36,13 @@ const Products = () => {
             const data = await response.json();
             const filteredProducts = data.filter((item) => item.name === name);
             setSlider(filteredProducts);
-            console.log(filteredProducts)
-            console.log(data)
             setIsLoading(false);
         };
 
         fetchData();
     }, [name]);
 
-    console.log(slider)
+        
 
     return (
         <div>
@@ -137,7 +136,7 @@ const Products = () => {
 
                                     <div className="card-actions justify-end">
                                         <button className="btn bg-[#ED1D26] hover:bg-[#ED1D26] text-white">Details</button>
-                                      <Link to={`/update/${prod._id}`}>  <button className="btn bg-[#ED1D26] hover:bg-[#ED1D26] text-white">Update</button></Link>
+                                      <Link to={`/update/${prod.name}`}>  <button className="btn bg-[#ED1D26] hover:bg-[#ED1D26] text-white">Update</button></Link>
                                     </div>
                                 </div>
                             </div>

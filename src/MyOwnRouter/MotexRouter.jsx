@@ -65,9 +65,8 @@ import UpdateCar from "../Pages/UpdateCar/UpdateCar";
 
         },{
 
-          path:'/update/:id',
+          path:'/update/:name',
           element:<PrivateRoute><UpdateCar></UpdateCar></PrivateRoute>,
-          loader:({params})=> fetch(`http://localhost:5000/car/${params.id}`)
 
         }
 

@@ -1,6 +1,34 @@
-// import Swal from "sweetalert2";
+/* eslint-disable no-unused-vars */
+ import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
+
+
 
 const UpdateCar = () => {
+    const [Updated,setUpdated] = useState([])
+    const [isLoading, setIsLoading] = useState(true);
+    const { name } = useParams();
+        
+    //Fetch car data by name
+    useEffect(() => {
+        const fetchData = async () => {
+            setIsLoading(true);
+            const response = await fetch(`http://localhost:5000/car`);
+            const data = await response.json();
+            const filteredProducts = data.filter((item) => item.name === name);
+            setUpdated(filteredProducts[0]);
+            setIsLoading(false);
+
+        };
+
+        fetchData();
+    }, [name]);
+
+    console.log(Updated)
+
+    // const {_id,name} = Updated || {};
+
     const handleUpdateCar = event => {
 
         event.preventDefault();
@@ -19,7 +47,7 @@ const UpdateCar = () => {
         console.log(newCar);
 
         //send data to the server
-  /*       fetch('http://localhost:5000/car', {
+       fetch('http://localhost:5000/car', {
 
             method: 'POST',
             headers: {
@@ -45,15 +73,16 @@ const UpdateCar = () => {
 
                 }
 
-            }) */
+            }) 
 
         // form.reset();
 
     }
 
+   
     return (
         <div className=" p-10">
-            <h2 className="text-3xl font-extrabold text-center mb-6">Update a car</h2> <hr />
+            <h2 className="text-3xl font-extrabold text-center mb-6">Update {Updated.name}</h2> <hr />
             <form onSubmit={handleUpdateCar} className="mt-4">
 
                 {/* Name and quantity row */}
@@ -64,7 +93,7 @@ const UpdateCar = () => {
                         </label>
                         <label className="input-group">
 
-                            <input type="text" name="name" placeholder="Car name" className="input input-bordered w-full" />
+                            <input type="text" name="name" defaultValue={name} placeholder="Car name" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 ml-4">
@@ -72,7 +101,7 @@ const UpdateCar = () => {
                         <label className="label">
                             <span className="label-text">Car Type</span>
                         </label>
-                        <select name="brand" className="select w-full outline-2 outline-black">
+                        <select name="brand" defaultValue={Updated.type} className="select w-full outline-2 outline-black">
                             <option disabled selected>Choose your car type</option>
                             <option>TOYOTA</option>
                             <option>FORD</option>
@@ -105,7 +134,7 @@ const UpdateCar = () => {
                         </label>
                         <label className="input-group">
 
-                            <input type="text" name="price" placeholder="Price" className="input input-bordered w-full" />
+                            <input type="text" defaultValue={Updated.price} name="price" placeholder="Price" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -149,7 +178,7 @@ const UpdateCar = () => {
 
                 </div>
 
-                <input className="btn btn-block text-white bg-[#ED1D26] hover:bg-[#ED1D26] " type="submit" value="Add Car" />
+                <input className="btn btn-block text-white bg-[#ED1D26] hover:bg-[#ED1D26] " type="submit" value="Update Car" />
             </form>
         </div>
     );
