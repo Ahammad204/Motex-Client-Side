@@ -1,12 +1,51 @@
 /* eslint-disable react/prop-types */
 
-import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const MycartCard = ({ cart }) => {
 
-    const { name, brand, type, price,photo } = cart || {}
-    console.log(name, brand, type, price)
+    const { _id, name, brand, type, price, photo } = cart || {}
+    console.log(_id, name, brand, type, price)
+
+    const handleDelete = _id => {
+
+        console.log(_id);
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+
+                fetch(`http://localhost:5000/cart/${_id}`,{
+
+                    method:'DELETE'
+
+                })
+                    .then(res => res.json())
+                    .then(data => {
+
+                        console.log(data)
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your car has been deleted.',
+                                'success'
+                            )
+
+                        }
+
+                    })
+            }
+        })
+
+    }
 
     return (
         <div>
@@ -19,8 +58,8 @@ const MycartCard = ({ cart }) => {
 
                     <div className="card-actions justify-end">
                         <p className="text-lg font-outfit font-medium">Price: {price}</p>
-                        <Link to={`/`}>
-                            <button className="btn text-white border-none bg-gradient-to-r from-[#1C1F38] to-[#42D0D9]">View Details</button></Link>
+
+                        <button onClick={() => handleDelete(_id)} className="btn text-white border-none  bg-[#ED1D26] hover:bg-[#ED1D26] ">Delete</button>
                     </div>
                 </div>
             </div>
