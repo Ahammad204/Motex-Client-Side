@@ -1,5 +1,14 @@
+# Features
+ - User can add car and information by select brand.
+ - User can see reamaining time about upcoming offer.
+ - user can login and access to private route
+ - user can update any product details
+ - user can see any product details
+ - user can buy product.
+ - user can see what they buy in mycart section.
+ 
 # Live Link 
-Live Link : 
+Live Link : https://ph-motex.web.app/
 
 # React + Vite
 
