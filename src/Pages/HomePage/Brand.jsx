@@ -17,7 +17,7 @@ const Brand = ({brand}) => {
                 {/* Brands */}
                 <div className="card bg-base-100 shadow-xl">
                     <figure className="flex-grow">
-                        <img src={photo} alt="Toyota" className="rounded-xl w-72 h-60" />
+                        <img src={photo} alt={name} className="rounded-xl w-72 h-60" />
                     </figure>
                     <div className="card-body items-center text-center ">
                         <h2 className="card-title font-extrabold text-3xl">{name}</h2>

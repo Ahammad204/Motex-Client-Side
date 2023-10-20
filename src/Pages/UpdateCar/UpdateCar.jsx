@@ -98,10 +98,10 @@ const UpdateCar = () => {
                     <div className="form-control md:w-1/2 ml-4">
 
                         <label className="label">
-                            <span className="label-text">Car Type</span>
+                            <span className="label-text">Car Brand</span>
                         </label>
                         <select name="brand" defaultValue={Updated.type} className="select w-full outline-2 outline-black">
-                            <option disabled selected>Choose your car type</option>
+                            <option disabled selected>Choose your car Brand</option>
                             <option>TOYOTA</option>
                             <option>FORD</option>
                             <option>BMW</option>
