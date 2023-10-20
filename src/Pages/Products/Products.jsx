@@ -15,7 +15,7 @@ const Products = () => {
     useEffect(() => {
         const fetchData = async () => {
             setIsLoading(true);
-            const response = await fetch(`https://motex-server-gm0kszbfc-kazi-ahammad-ullahs-projects.vercel.app/car`);
+            const response = await fetch(`https://motex-server.vercel.app/car`);
             const data = await response.json();
             const filteredProducts = data.filter((item) => item.brand === name);
             setProducts(filteredProducts);
@@ -32,7 +32,7 @@ const Products = () => {
     useEffect(() => {
         const fetchData = async () => {
             setIsLoading(true);
-            const response = await fetch(`https://motex-server-gm0kszbfc-kazi-ahammad-ullahs-projects.vercel.app/slide`);
+            const response = await fetch(`https://motex-server.vercel.app/slide`);
             const data = await response.json();
             const filteredProducts = data.filter((item) => item.name === name);
             setSlider(filteredProducts);

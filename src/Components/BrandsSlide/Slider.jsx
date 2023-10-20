@@ -17,7 +17,7 @@ const Slider = () => {
         console.log(newBrandSlider);
 
         //send data to the server
-        fetch('https://motex-server-gm0kszbfc-kazi-ahammad-ullahs-projects.vercel.app/slide', {
+        fetch('https://motex-server.vercel.app/slide', {
 
             method: 'POST',
             headers: {

@@ -28,7 +28,7 @@ import CarDetails from "../Pages/CarDetails/carDetails";
 
           path:"/",
           element:<HomePage></HomePage>,
-          loader: ()=> fetch('https://motex-server-gm0kszbfc-kazi-ahammad-ullahs-projects.vercel.app/brand')
+          loader: ()=> fetch('https://motex-server.vercel.app/brand')
 
 
         },{
@@ -41,7 +41,7 @@ import CarDetails from "../Pages/CarDetails/carDetails";
 
           path:"/cart",
           element:<PrivateRoute><Mycart></Mycart></PrivateRoute>,
-          loader: ()=> fetch('https://motex-server-gm0kszbfc-kazi-ahammad-ullahs-projects.vercel.app/cart')
+          loader: ()=> fetch('https://motex-server.vercel.app/cart')
 
         },
         {

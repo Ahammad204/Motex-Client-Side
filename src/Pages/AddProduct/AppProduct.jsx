@@ -19,7 +19,7 @@ const AppProduct = () => {
         console.log(newCar);
 
         //send data to the server
-        fetch('https://motex-server-gm0kszbfc-kazi-ahammad-ullahs-projects.vercel.app/car', {
+        fetch('https://motex-server.vercel.app/car', {
 
             method: 'POST',
             headers: {
