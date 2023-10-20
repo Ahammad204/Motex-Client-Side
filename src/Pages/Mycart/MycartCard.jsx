@@ -23,7 +23,7 @@ const MycartCard = ({ cart,setCarts,carts }) => {
             if (result.isConfirmed) {
 
 
-                fetch(`http://localhost:5000/cart/${_id}`,{
+                fetch(`https://motex-server-gm0kszbfc-kazi-ahammad-ullahs-projects.vercel.app/cart/${_id}`,{
 
                     method:'DELETE'
 

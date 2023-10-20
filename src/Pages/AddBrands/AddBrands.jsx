@@ -17,7 +17,7 @@ const AddBrands = () => {
         console.log(newBrand);
 
         //send data to the server
-        fetch('http://localhost:5000/brand', {
+        fetch('https://motex-server-gm0kszbfc-kazi-ahammad-ullahs-projects.vercel.app/brand', {
 
             method: 'POST',
             headers: {

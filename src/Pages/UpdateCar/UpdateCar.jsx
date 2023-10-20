@@ -46,7 +46,7 @@ const UpdateCar = () => {
         console.log(newCar);
 
         //send data to the server
-       fetch(`http://localhost:5000/car/${id}`, {
+       fetch(`https://motex-server-gm0kszbfc-kazi-ahammad-ullahs-projects.vercel.app/car/${id}`, {
 
             method: 'PUT',
             headers: {

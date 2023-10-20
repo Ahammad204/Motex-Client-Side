@@ -17,7 +17,7 @@ const CarDetails = () => {
     useEffect(() => {
         const fetchData = async () => {
             setIsLoading(true);
-            const response = await fetch(`http://localhost:5000/car`);
+            const response = await fetch(`https://motex-server-gm0kszbfc-kazi-ahammad-ullahs-projects.vercel.app/car`);
             const data = await response.json();
             const filteredProducts = data.filter((item) => item._id === id);
             setCarDetails(filteredProducts[0]);
@@ -45,7 +45,7 @@ const CarDetails = () => {
         console.log(newCart);
 
         //send data to the server
-        fetch('http://localhost:5000/cart', {
+        fetch('https://motex-server-gm0kszbfc-kazi-ahammad-ullahs-projects.vercel.app/cart', {
 
             method: 'POST',
             headers: {
