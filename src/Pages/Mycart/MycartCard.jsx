@@ -3,7 +3,7 @@
 import Swal from "sweetalert2";
 
 
-const MycartCard = ({ cart }) => {
+const MycartCard = ({ cart,setCarts,carts }) => {
 
     const { _id, name, brand, type, price, photo } = cart || {}
     console.log(_id, name, brand, type, price)
@@ -38,6 +38,8 @@ const MycartCard = ({ cart }) => {
                                 'Your car has been deleted.',
                                 'success'
                             )
+                            const reamaining = carts.filter(cof => cof._id !== _id)
+                            setCarts(reamaining)
 
                         }
 
