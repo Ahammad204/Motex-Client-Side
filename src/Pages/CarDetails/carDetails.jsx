@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const CarDetails = () => {
@@ -11,6 +12,7 @@ const CarDetails = () => {
     const [carDetails, setCarDetails] = useState([])
     const [isLoading, setIsLoading] = useState(true);
     const { id } = useParams()
+    const { user } = useContext(AuthContext)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -31,10 +33,14 @@ const CarDetails = () => {
     const { name, photo, price, brand, type, short, rating2 } =
         carDetails || {};
 
-    const handlePrice = () => {
+        console.log(user)
+
+        const email = user.email;
+
+    const handleCart = () => {
      
 
-        const newCart = { name,brand,type,price,short,photo }
+        const newCart = { name,brand,type,price,short,photo, email}
 
         console.log(newCart);
 
@@ -85,7 +91,7 @@ const CarDetails = () => {
                             <button className="btn bg-transparent text-white hover:bg-[#ED1D26]  border-2 border-red-500 hover:border-red-500 font-outfit">Type {type}</button>
 
                         </div>
-                        <button onClick={handlePrice} className="btn bg-transparent text-white hover:bg-[#ED1D26]  border-2 border-red-500 hover:border-red-500 font-outfit">Add To Cart</button>
+                        <button onClick={handleCart} className="btn bg-transparent text-white hover:bg-[#ED1D26]  border-2 border-red-500 hover:border-red-500 font-outfit">Add To Cart</button>
                     </div>
                 </div>
             </div>

@@ -38,6 +38,12 @@ import CarDetails from "../Pages/CarDetails/carDetails";
 
         },{
 
+          path:"/cart/:email",
+          element:<PrivateRoute><Mycart></Mycart></PrivateRoute>
+
+        },
+        {
+
           path:"/cart",
           element:<PrivateRoute><Mycart></Mycart></PrivateRoute>
 
