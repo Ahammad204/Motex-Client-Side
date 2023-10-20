@@ -11,6 +11,9 @@ import AddBrands from "../Pages/AddBrands/AddBrands";
 import Products from "../Pages/Products/Products";
 import Slider from "../Components/BrandsSlide/Slider";
 import UpdateCar from "../Pages/UpdateCar/UpdateCar";
+import CarDetails from "../Pages/CarDetails/carDetails";
+
+
 
   
   const router = createBrowserRouter([
@@ -67,6 +70,11 @@ import UpdateCar from "../Pages/UpdateCar/UpdateCar";
 
           path:'/update/:id',
           element:<PrivateRoute><UpdateCar></UpdateCar></PrivateRoute>,
+
+        },{
+
+          path:'/details/:id',
+          element:<PrivateRoute><CarDetails></CarDetails></PrivateRoute>,
 
         }
 
