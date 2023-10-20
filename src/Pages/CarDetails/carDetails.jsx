@@ -3,6 +3,7 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const CarDetails = () => {
@@ -31,8 +32,40 @@ const CarDetails = () => {
         carDetails || {};
 
     const handlePrice = () => {
+     
 
+        const newCart = { name,brand,type,price,short,photo }
 
+        console.log(newCart);
+
+        //send data to the server
+        fetch('http://localhost:5000/cart', {
+
+            method: 'POST',
+            headers: {
+
+                'content-type': 'application/json'
+
+            },
+            body: JSON.stringify(newCart)
+
+        })
+            .then(res => res.json())
+            .then(data => {
+
+                console.log(data);
+                if (data.insertedId) {
+
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Car Added in Cart Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+
+                }
+
+            })
 
 
     }
@@ -47,10 +80,10 @@ const CarDetails = () => {
                         <h1 className="mb-5 text-5xl font-bold font-teko">{name}</h1>
                         <p className="mb-5 text-lg font-outfit font-medium">{short}</p>
                         <div className="grid md:grid-cols-3 grid-cols-1 gap-4 mb-4">
-                            <button  className="btn bg-transparent text-white hover:bg-[#ED1D26]  border-2 border-red-500 hover:border-red-500 font-outfit">Price {price}</button>
+                            <button className="btn bg-transparent text-white hover:bg-[#ED1D26]  border-2 border-red-500 hover:border-red-500 font-outfit">Price {price}</button>
                             <button className="btn bg-transparent text-white hover:bg-[#ED1D26]  border-2 border-red-500 hover:border-red-500 font-outfit">Brand {brand}</button>
-                            <button  className="btn bg-transparent text-white hover:bg-[#ED1D26]  border-2 border-red-500 hover:border-red-500 font-outfit">Type {type}</button>
-                           
+                            <button className="btn bg-transparent text-white hover:bg-[#ED1D26]  border-2 border-red-500 hover:border-red-500 font-outfit">Type {type}</button>
+
                         </div>
                         <button onClick={handlePrice} className="btn bg-transparent text-white hover:bg-[#ED1D26]  border-2 border-red-500 hover:border-red-500 font-outfit">Add To Cart</button>
                     </div>

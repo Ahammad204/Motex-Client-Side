@@ -15,6 +15,7 @@ import CarDetails from "../Pages/CarDetails/carDetails";
 
 
 
+
   
   const router = createBrowserRouter([
     {
@@ -40,7 +41,8 @@ import CarDetails from "../Pages/CarDetails/carDetails";
           path:"/cart",
           element:<PrivateRoute><Mycart></Mycart></PrivateRoute>
 
-        },{
+        },
+        {
 
           path:"/login",
           element:<Login></Login>
