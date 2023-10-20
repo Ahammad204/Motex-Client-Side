@@ -36,16 +36,12 @@ import CarDetails from "../Pages/CarDetails/carDetails";
           path:"/addProduct",
           element:<PrivateRoute><AppProduct></AppProduct></PrivateRoute>
 
-        },{
-
-          path:"/cart/:email",
-          element:<PrivateRoute><Mycart></Mycart></PrivateRoute>
-
         },
         {
 
           path:"/cart",
-          element:<PrivateRoute><Mycart></Mycart></PrivateRoute>
+          element:<PrivateRoute><Mycart></Mycart></PrivateRoute>,
+          loader: ()=> fetch('http://localhost:5000/cart')
 
         },
         {

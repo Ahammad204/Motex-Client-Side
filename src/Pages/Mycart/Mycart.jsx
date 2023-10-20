@@ -1,42 +1,28 @@
-/* eslint-disable no-unused-vars */
-import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { AuthContext } from "../../Provider/AuthProvider";
+import { useLoaderData } from "react-router-dom";
+import MycartCard from "./MycartCard";
 
 
 const Mycart = () => {
 
-    
-    const [cartDetails, setCartDetails] = useState([])
-    const [isLoading, setIsLoading] = useState(true);
-    const { email } = useParams()
-    const { user } = useContext(AuthContext)
-
-    useEffect(() => {
-        const fetchData = async () => {
-            setIsLoading(true);
-            const response = await fetch(`http://localhost:5000/cart`);
-            const data = await response.json();
-            const filteredProducts = data.filter((item) => item.email === email);
-            setCartDetails(filteredProducts[0]);
-            setIsLoading(false);
-
-
-        };
-
-        fetchData();
-    }, [email]);
-
-    console.log(cartDetails)
-    const { name, photo, price, brand, type, short, rating2 } =
-        cartDetails || {};
-
-        console.log(user)
+    const carts = useLoaderData()
 
     return (
         <div>
-            <h1>Your cart {name}</h1>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
+
+            {
+
+                
+                
+                carts?.map(cart => <MycartCard key={cart._id} cart={cart}></MycartCard>)
+
+
+            }
+
+
         </div>
+    </div>
     );
 };
 
