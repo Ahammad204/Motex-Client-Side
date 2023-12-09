@@ -10,11 +10,47 @@
 # Live Link 
 Live Link : https://ph-motex.web.app/
 
-# React + Vite
+# Project Name: motex
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+This project is a React application built with Vite, a fast build tool for modern web development.
 
-Currently, two official plugins are available:
+## Installation
+1. Clone the repository: `git clone [repository_url]`
+2. Navigate to the project directory: `cd motex`
+3. Install dependencies: `npm install`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Scripts
+- **dev:** Run the development server with Vite: `npm run dev`
+- **build:** Build the production-ready code: `npm run build`
+- **lint:** Run ESLint for code linting: `npm run lint`
+- **preview:** Launch a preview of the production build: `npm run preview`
+
+## Dependencies
+- **firebase:** ^10.5.0
+- **localforage:** ^1.10.0
+- **match-sorter:** ^6.3.1
+- **react:** ^18.2.0
+- **react-dom:** ^18.2.0
+- **react-hot-toast:** ^2.4.1
+- **react-icons:** ^4.11.0
+- **react-rating:** ^2.0.5
+- **react-router-dom:** ^6.17.0
+- **sort-by:** ^1.2.0
+- **sweetalert2:** ^11.7.32
+
+## Development Dependencies
+- **@types/react:** ^18.2.15
+- **@types/react-dom:** ^18.2.7
+- **@vitejs/plugin-react:** ^4.0.3
+- **autoprefixer:** ^10.4.16
+- **daisyui:** ^3.9.3
+- **eslint:** ^8.45.0
+- **eslint-plugin-react:** ^7.32.2
+- **eslint-plugin-react-hooks:** ^4.6.0
+- **eslint-plugin-react-refresh:** ^0.4.3
+- **postcss:** ^8.4.31
+- **tailwindcss:** ^3.3.3
+- **vite:** ^4.4.5
+
+

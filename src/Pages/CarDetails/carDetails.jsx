@@ -29,11 +29,11 @@ const CarDetails = () => {
         fetchData();
     }, [id]);
 
-    console.log(carDetails)
+    // console.log(carDetails)
     const { name, photo, price, brand, type, short, rating2 } =
         carDetails || {};
 
-        console.log(user)
+        // console.log(user)
 
         const email = user.email;
 
