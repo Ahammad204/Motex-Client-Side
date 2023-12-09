@@ -16,7 +16,7 @@ Live Link : https://ph-motex.web.app/
 This project is a React application built with Vite, a fast build tool for modern web development.
 
 ## Installation
-1. Clone the repository: `git clone [repository_url]`
+1. Clone the repository: `git clone [https://github.com/Ahammad204/Motex-Client-Side.git]`
 2. Navigate to the project directory: `cd motex`
 3. Install dependencies: `npm install`
 
