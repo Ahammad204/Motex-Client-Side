@@ -7,7 +7,7 @@ const Time = () => {
   const [seconds, setSeconds] = useState(0);
 
 
-  const deadLine = "December 10 , 2023";
+  const deadLine = "December 10 , 2024";
 
   const getTime = (deadLine) => {
     const time = Date.parse(deadLine) - Date.now();
